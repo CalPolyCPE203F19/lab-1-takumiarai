@@ -16,6 +16,8 @@ public class TestCases
 {
    private static final double DELTA = 0.00001;
 
+
+   //TEST SIMPLE IF
    @Test
    public void testSimpleIf1()
    {
@@ -31,10 +33,12 @@ public class TestCases
    @Test
    public void testSimpleIf3()
    {
-      fail("Missing SimpleIf3");
+      assertEquals(1.0, SimpleIf.max(-4.2, 1.0), DELTA);
       /* TO DO: Write one more valid test case. */
    }
 
+
+   //TEST SIMPLE LOOP
    @Test
    public void testSimpleLoop1()
    {
@@ -50,11 +54,13 @@ public class TestCases
    @Test
    public void testSimpleLoop3()
    {
-      fail("Missing SimpleLoop3");
+      assertEquals(-14, SimpleLoop.sum(-5, 1));
       /* TO DO: Write one more valid test case to make sure that
          this function is not just returning 7. */
    }
 
+
+   //TEST SIMPLE ARRAY
    @Test
    public void testSimpleArray1()
    {
@@ -76,10 +82,14 @@ public class TestCases
    @Test
    public void testSimpleArray3()
    {
-      fail("Missing SimpleArray3");
-      /* TO DO: Add a new test case. */
+      assertArrayEquals(
+         new int[] {49, 81},
+         SimpleArray.squareAll(new int[] {-7, 9}));
+         /* TO DO: Add a new test case. */
    }
 
+
+   //TEST SIMPLE LIST
    @Test
    public void testSimpleList1()
    {
@@ -94,10 +104,16 @@ public class TestCases
    @Test
    public void testSimpleList2()
    {
-      fail("Missing SimpleList2");
+      List<Integer> input =
+         new LinkedList<Integer>(Arrays.asList(new Integer[] {-3, 4, 12}));
+      List<Integer> expected =
+         new ArrayList<Integer>(Arrays.asList(new Integer[] {9, 16, 144}));
+
+      assertEquals(expected, SimpleList.squareAll(input));
       /* TO DO: Add a new test case. */
    }
 
+   //TEST BETTER LOOP
    @Test
    public void testBetterLoop1()
    {
@@ -113,10 +129,11 @@ public class TestCases
    @Test
    public void testBetterLoop3()
    {
-      fail("Missing BetterLoop3");
+      assertEquals(false, BetterLoop.contains(new int[] {3, 6, 9, 12, 15}, 4));
       /* TO DO: Write a valid test case where the expected result is false. */
    }
 
+   //TEST EXAMPLE MAP
    @Test
    public void testExampleMap1()
    {

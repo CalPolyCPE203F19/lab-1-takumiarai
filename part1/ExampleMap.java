@@ -4,6 +4,7 @@ import java.util.Map;
 
 class ExampleMap
 {
+   //returns a list of strings containing the studentName of overenrolled
    public static List<String> highEnrollmentStudents(
       Map<String, List<Course>> courseListsByStudentName, int unitThreshold)
    {
