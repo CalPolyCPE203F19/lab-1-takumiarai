@@ -174,7 +174,33 @@ public class TestCases
    @Test
    public void testExampleMap2()
    {
-      fail("Missing ExampleMap2");
-      /* TO DO: Write another valid test case. */
-   }
+      List<String> expected = Arrays.asList("Armstrongo", "Jojo");
+      Map<String, List<Course>> courseListsByStudent = new HashMap<>();
+
+      courseListsByStudent.put("NoClassPerson",
+         Arrays.asList(
+            new Course("LOL 101", 0)));
+      courseListsByStudent.put("Armstrong",
+         Arrays.asList(
+            new Course("CPE 101", 4),
+            new Course("CPE 202", 4),
+            new Course("CPE 203", 4)));
+      courseListsByStudent.put("Armstrongo",
+         Arrays.asList(
+            new Course("CPE 101", 4),
+            new Course("CPE 202", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 225", 5)));
+      courseListsByStudent.put("Jojo",
+         Arrays.asList(
+            new Course("CPE 123", 4),
+            new Course("CPE 203", 4),
+            new Course("CPE 471", 4),
+            new Course("CPE 473", 4),
+            new Course("CPE 476", 4),
+            new Course("CPE 572", 4)));
+
+      assertEquals(new HashSet<>(expected),
+         new HashSet<>(ExampleMap.highEnrollmentStudents(
+            courseListsByStudent, 16)));   }
 }

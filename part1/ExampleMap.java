@@ -8,12 +8,28 @@ class ExampleMap
    public static List<String> highEnrollmentStudents(
       Map<String, List<Course>> courseListsByStudentName, int unitThreshold)
    {
-      List<String> overEnrolledStudents = new LinkedList<>();
-
       /*
          Build a list of the names of students currently enrolled
          in a number of units strictly greater than the unitThreshold.
       */
+
+      List<String> overEnrolledStudents = new LinkedList<>();
+
+
+      for (Map.Entry<String,List<Course>> entry : courseListsByStudentName.entrySet())
+      {
+         String studentName = entry.getKey();
+         List<Course> courseList = entry.getValue();
+
+         int totalUnits = 0;
+         for(Course course : courseList) {
+            totalUnits += course.getNumUnits();
+         }
+
+         if (totalUnits > unitThreshold) { overEnrolledStudents.add(studentName); }
+
+      }
+      
 
       return overEnrolledStudents;      
    }
