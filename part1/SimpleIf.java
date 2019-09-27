@@ -9,6 +9,6 @@ class SimpleIf
       if(x<y) { return y; }
       if(x>y) { return x; }
 
-      return 0; // clearly not correct -- but testable
+      return x; 
    }
 }
