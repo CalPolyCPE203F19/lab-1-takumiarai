@@ -13,6 +13,8 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 
+import java.lang.Math;
+
 public class TestCases
 {
    public static final double DELTA = 0.00001;
@@ -24,6 +26,34 @@ public class TestCases
    public void testGetX()
    {
       assertEquals(1.0, new Point(1.0, 2.0).getX(), DELTA);
+   }
+
+   @Test
+   public void testGetY()
+   {
+      assertEquals(2.2, new Point(2.0, 2.2).getY(), DELTA);
+   }
+
+   @Test
+   public void testGetRadius()
+   {
+      assertEquals(5.0, new Point(3.0, 4.0).getRadius(), DELTA);
+   }
+
+   @Test
+   public void testGetAngle()
+   {
+      assertEquals(Math.PI/2, new Point(0.0, 3.14159).getAngle(), DELTA);
+   }
+
+   @Test
+   public void testRotate90()
+   {
+      Point point = new Point(-1, 10);
+      Point rotatedPoint = point.rotate90();
+
+      assertEquals(-10.0, rotatedPoint.getX(), DELTA);
+      assertEquals(-1.0,  rotatedPoint.getY(), DELTA);      
    }
 
    /*
