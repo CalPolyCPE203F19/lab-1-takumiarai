@@ -53,10 +53,17 @@ public class TestCases
    }
 
    @Test
-   public void testGetAngle3()
+   public void testGetAngleQ1()
    {
       assertEquals(Math.PI/4, new Point(1.0, 1.0).getAngle(), DELTA);
    }
+
+   @Test
+   public void testGetAngleQ2()
+   {
+      assertEquals(Math.PI*3/4, new Point(-1.0, 1.0).getAngle(), DELTA);
+   }
+
 
    @Test
    public void testRotate90()
